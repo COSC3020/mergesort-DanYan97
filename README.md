@@ -15,7 +15,12 @@ Analyse the time complexity of your implementation and give a $\Theta$ bound for
 its worst-case runtime. Add your answer, including your reasoning, to this
 markdown file.
 
-The worst-case run time for the implementation is $\Theta (n^2)$, if the first element of the second subarry is smaller than all elements of the first subarry, this will shift all the element in the first subarry, and merging the two subarrays can take up to $O(n*n)$ time becuase of the element shifting$
+In mergeInplace function, the while loop iterate through both subarrays, it continues as long as the the elements in both subarrays are compared. The time complaxity is $n+n$. The for loop shifts the elements of the first subarray to the right for the small element, in the worst case, if the first element of the second subarry is smaller than all elements of the first subarry, this will shift all the element in the first subarry, which lead a time complexity $n^2$
+
+In mergesort, the outerloop doubles the size of subarrys each time, results the complexity $log_2n$; the innerloop calls the mergeInplace function to processes the array of the doubled size.
+
+Combine the functions together, the time complexity for worst case can be represent as $(log_2n+n+n+n^2)$, by droping the lower order terms, it is $\Theta(n^2)$
+
 
 “I certify that I have listed all sources used to complete this exercise,
  including the use of any Large Language Models. 
